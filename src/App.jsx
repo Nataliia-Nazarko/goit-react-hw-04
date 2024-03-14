@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
+import Loader from "./components/Loader/Loader";
+//import ImageGallery from "./components/ImageGallery/ImageGallery"
 import SearchBar from "./components/SearchBar/SearchBar";
-import { ErrorMessage } from "formik";
 
-//import axios from "axios";
+import "./App.css";
 
 function App() {
   const [products, setProducts] = useState(0);
