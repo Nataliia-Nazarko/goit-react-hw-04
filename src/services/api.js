@@ -1,15 +1,9 @@
 import axios from "axios";
 
-export const requestProducts = async () => {
-  const { data } = await axios.get(
-    "a6bVG8PFLFYaoqUf6XtYoD3RDl2R6KFIdIl4FMnIgBQ"
-  );
-  return data;
-};
+const ACCESS_KEY = `0ERgyIHQMHejIldmcKOg4e4JDchmvmkubfmenvtNSEE`;
 
-export const requestProductsByQuery = async (query) => {
-  const { data } = await axios.get(
-    `a6bVG8PFLFYaoqUf6XtYoD3RDl2R6KFIdIl4FMnIgBQ=${query}`
-  );
-  return data;
+axios.defaults.baseURL = "https://api.unsplash.com/search";
+
+export const getFetchImg = (page, per_page, query) => {
+  return `/photos?client_id=${ACCESS_KEY}&page=${page}&per_page=${per_page}&query=${query}`;
 };
